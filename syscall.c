@@ -230,6 +230,7 @@ int main(int argc, char *argv[])
 		{
 			search_and_print(x64, argv[2]);
 			printf("this is for test \n");
+			printf("this is for test \n");
 		}
 		break;
 	default:

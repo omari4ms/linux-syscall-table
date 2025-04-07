@@ -229,6 +229,7 @@ int main(int argc, char *argv[])
 		if (strcmp(argv[1], "--x64") == 0)
 		{
 			search_and_print(x64, argv[2]);
+			printf("this is test to change");
 		}
 		break;
 	default:

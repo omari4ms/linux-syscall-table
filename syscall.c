@@ -67,62 +67,61 @@ char *x64[][8] = {
 	{"listen", "50", "int", "int", "-", "-", "-", "-"},
 	{"getsockname", "51", "int", "struct sockaddr *", "int *", "-", "-", "-"},
 	{NULL}};
-char *x86[][8] ={
+char *x86[][8] = {
 	{"SYSCALL NAME", "EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP"},
-{"restart_syscall", "0", "-", "-", "-", "-", "-", "-"},
-{"exit", "1", "int error_code", "-", "-", "-", "-", "-"},
-{"fork", "2", "-", "-", "-", "-", "-", "-"},
-{"read", "3", "unsigned int fd", "char * buf", "size_t count", "-", "-", "-"},
-{"write", "4", "unsigned int fd", "const char * buf", "size_t count", "-", "-", "-"},
-{"open", "5", "const char * filename", "int flags", "int mode", "-", "-", "-"},
-{"close", "6", "unsigned int fd", "-", "-", "-", "-", "-"},
-{"waitpid", "7", "pid_t pid", "int * wait_stat", "int options", "-", "-", "-"},
-{"creat", "8", "const char * pathname", "int mode", "-", "-", "-", "-"},
-{"link", "9", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
-{"unlink", "10", "const char * pathname", "-", "-", "-", "-", "-"},
-{"execve", "11", "const char * filename", "char const argv []", "char const envp []", "-", "-", "-"},
-{"chdir", "12", "const char * filename", "-", "-", "-", "-", "-"},
-{"time", "13", "time_t * tloc", "-", "-", "-", "-", "-"},
-{"mknod", "14", "const char * filename", "int mode", "int dev", "-", "-", "-"},
-{"chmod", "15", "const char * filename", "mode_t mode", "-", "-", "-", "-"},
-{"lchown", "16", "const char * filename", "uid_t owner", "gid_t group", "-", "-", "-"},
-{"break", "17", "-", "-", "-", "-", "-", "-"},
-{"oldstat", "18", "const char * filename", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
-{"lseek", "19", "unsigned int fd", "off_t offset", "unsigned int whence", "-", "-", "-"},
-{"getpid", "20", "-", "-", "-", "-", "-", "-"},
-{"mount", "21", "char * dev_name", "char * dir_name", "char * type", "unsigned long flags", "void * data", "-"},
-{"umount", "22", "char * name", "int flags", "-", "-", "-", "-"},
-{"setuid", "23", "uid_t uid", "-", "-", "-", "-", "-"},
-{"getuid", "24", "-", "-", "-", "-", "-", "-"},
-{"stime", "25", "time_t * tptr", "-", "-", "-", "-", "-"},
-{"ptrace", "26", "long request", "long pid", "long addr", "long data", "-", "-"},
-{"alarm", "27", "unsigned int seconds", "-", "-", "-", "-", "-"},
-{"oldfstat", "28", "int fd", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
-{"pause", "29", "-", "-", "-", "-", "-", "-"},
-{"utime", "30", "char * filename", "struct utimbuf * times", "-", "-", "-", "-"},
-{"stty", "31", "-", "-", "-", "-", "-", "-"},
-{"gtty", "32", "-", "-", "-", "-", "-", "-"},
-{"access", "33", "const char * filename", "int mode", "-", "-", "-", "-"},
-{"nice", "34", "int priority", "-", "-", "-", "-", "-"},
-{"ftime", "35", "-", "-", "-", "-", "-", "-"},
-{"sync", "36", "-", "-", "-", "-", "-", "-"},
-{"kill", "37", "pid_t pid", "int sig", "-", "-", "-", "-"},
-{"rename", "38", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
-{"mkdir", "39", "const char * pathname", "int mode", "-", "-", "-", "-"},
-{"rmdir", "40", "const char * pathname", "-", "-", "-", "-", "-"},
-{"dup", "41", "unsigned int fildes", "-", "-", "-", "-", "-"},
-{"pipe", "42", "int * fildes", "-", "-", "-", "-", "-"},
-{"times", "43", "struct tms * buf", "-", "-", "-", "-", "-"},
-{"prof", "44", "-", "-", "-", "-", "-", "-"},
-{"brk", "45", "void * brk", "-", "-", "-", "-", "-"},
-{"setgid", "46", "gid_t gid", "-", "-", "-", "-", "-"},
-{"getgid", "47", "-", "-", "-", "-", "-", "-"},
-{"signal", "48", "int sig", "void * handler", "-", "-", "-", "-"},
-{"geteuid", "49", "-", "-", "-", "-", "-", "-"},
-{"getegid", "50", "-", "-", "-", "-", "-", "-"},
-{"acct", "51", "const char * name", "-", "-", "-", "-", "-"},
-{NULL}
-};
+	{"restart_syscall", "0", "-", "-", "-", "-", "-", "-"},
+	{"exit", "1", "int error_code", "-", "-", "-", "-", "-"},
+	{"fork", "2", "-", "-", "-", "-", "-", "-"},
+	{"read", "3", "unsigned int fd", "char * buf", "size_t count", "-", "-", "-"},
+	{"write", "4", "unsigned int fd", "const char * buf", "size_t count", "-", "-", "-"},
+	{"open", "5", "const char * filename", "int flags", "int mode", "-", "-", "-"},
+	{"close", "6", "unsigned int fd", "-", "-", "-", "-", "-"},
+	{"waitpid", "7", "pid_t pid", "int * wait_stat", "int options", "-", "-", "-"},
+	{"creat", "8", "const char * pathname", "int mode", "-", "-", "-", "-"},
+	{"link", "9", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
+	{"unlink", "10", "const char * pathname", "-", "-", "-", "-", "-"},
+	{"execve", "11", "const char * filename", "char const argv []", "char const envp []", "-", "-", "-"},
+	{"chdir", "12", "const char * filename", "-", "-", "-", "-", "-"},
+	{"time", "13", "time_t * tloc", "-", "-", "-", "-", "-"},
+	{"mknod", "14", "const char * filename", "int mode", "int dev", "-", "-", "-"},
+	{"chmod", "15", "const char * filename", "mode_t mode", "-", "-", "-", "-"},
+	{"lchown", "16", "const char * filename", "uid_t owner", "gid_t group", "-", "-", "-"},
+	{"break", "17", "-", "-", "-", "-", "-", "-"},
+	{"oldstat", "18", "const char * filename", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
+	{"lseek", "19", "unsigned int fd", "off_t offset", "unsigned int whence", "-", "-", "-"},
+	{"getpid", "20", "-", "-", "-", "-", "-", "-"},
+	{"mount", "21", "char * dev_name", "char * dir_name", "char * type", "unsigned long flags", "void * data", "-"},
+	{"umount", "22", "char * name", "int flags", "-", "-", "-", "-"},
+	{"setuid", "23", "uid_t uid", "-", "-", "-", "-", "-"},
+	{"getuid", "24", "-", "-", "-", "-", "-", "-"},
+	{"stime", "25", "time_t * tptr", "-", "-", "-", "-", "-"},
+	{"ptrace", "26", "long request", "long pid", "long addr", "long data", "-", "-"},
+	{"alarm", "27", "unsigned int seconds", "-", "-", "-", "-", "-"},
+	{"oldfstat", "28", "int fd", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
+	{"pause", "29", "-", "-", "-", "-", "-", "-"},
+	{"utime", "30", "char * filename", "struct utimbuf * times", "-", "-", "-", "-"},
+	{"stty", "31", "-", "-", "-", "-", "-", "-"},
+	{"gtty", "32", "-", "-", "-", "-", "-", "-"},
+	{"access", "33", "const char * filename", "int mode", "-", "-", "-", "-"},
+	{"nice", "34", "int priority", "-", "-", "-", "-", "-"},
+	{"ftime", "35", "-", "-", "-", "-", "-", "-"},
+	{"sync", "36", "-", "-", "-", "-", "-", "-"},
+	{"kill", "37", "pid_t pid", "int sig", "-", "-", "-", "-"},
+	{"rename", "38", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
+	{"mkdir", "39", "const char * pathname", "int mode", "-", "-", "-", "-"},
+	{"rmdir", "40", "const char * pathname", "-", "-", "-", "-", "-"},
+	{"dup", "41", "unsigned int fildes", "-", "-", "-", "-", "-"},
+	{"pipe", "42", "int * fildes", "-", "-", "-", "-", "-"},
+	{"times", "43", "struct tms * buf", "-", "-", "-", "-", "-"},
+	{"prof", "44", "-", "-", "-", "-", "-", "-"},
+	{"brk", "45", "void * brk", "-", "-", "-", "-", "-"},
+	{"setgid", "46", "gid_t gid", "-", "-", "-", "-", "-"},
+	{"getgid", "47", "-", "-", "-", "-", "-", "-"},
+	{"signal", "48", "int sig", "void * handler", "-", "-", "-", "-"},
+	{"geteuid", "49", "-", "-", "-", "-", "-", "-"},
+	{"getegid", "50", "-", "-", "-", "-", "-", "-"},
+	{"acct", "51", "const char * name", "-", "-", "-", "-", "-"},
+	{NULL}};
 
 void help(const char *argv)
 {
@@ -278,13 +277,20 @@ int main(int argc, char *argv[])
 		{
 			print_table(x64);
 		}
-		
+		if (strcmp(argv[1], "--x86") == 0 || strcmp(argv[1], "--x32") == 0 )
+		{
+			print_table(x86);
+		}
+
 		break;
 	case 3:
 		if (strcmp(argv[1], "--x64") == 0)
 		{
 			search_and_print(x64, argv[2]);
-			
+		}
+		if (strcmp(argv[1], "--x86") == 0 || strcmp(argv[1], "--x32") == 0)
+		{
+			search_and_print(x86, argv[2]);
 		}
 		break;
 	default:

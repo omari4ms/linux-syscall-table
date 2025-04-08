@@ -10,6 +10,6 @@ run:
 install:
 	@mv $(appout) /bin/
 clean:
-	@if [ -e $(appout) ]; then rm slip; else echo "Error: 'slip' binary file not found."; fi
+	@if [ -e $(appout) ]; then rm $(appout); else echo "Error: '$(appout)' binary file not found."; fi
 	clear
 

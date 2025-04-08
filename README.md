@@ -1,4 +1,4 @@
-# 🛠️ Linux Syscall Table 
+#  Linux Syscall Table 
 
 A simple ANSI-colored command-line utility to display Linux syscall tables in a readable table format.
 
@@ -66,7 +66,7 @@ EXAMPLES:
 
 ---
 
-## 📚 Makefile
+## 🛠️ Makefile
 
 ```bash
 

@@ -58,15 +58,34 @@ Available architectures: --x32, --x64, --arm32, --x86
 
 EXAMPLES:
   ./syscall_viewer --x64                Show all x64 syscalls
-  ./syscall_viewer --x64 --write        Show details for the 'write' syscall on x64
-  ./syscall_viewer --arm32 --read       Show details for the 'read' syscall on arm32
-  ./syscall_viewer --x86 --read         Show details for the 'read' syscall on x86
+  ./syscall_viewer --x64  write        Show details for the 'write' syscall on x64
+  ./syscall_viewer --arm32  read       Show details for the 'read' syscall on arm32
+  ./syscall_viewer --x86  read         Show details for the 'read' syscall on x86
+```
+---
+
+---
+
+## 📚 Makefile
+
+```bash
+
+Build & Run (Default):
+make
+
+Only Compile:
+make build
+
+Install System-Wide (requires sudo if /bin/ is protected):
+make install
+
+Clean Up (Remove Binary):
+make clean
+
 ```
 ---
 
 ## 💡 Future Plans
-
-Add --x86 and --arm32 support.
 
 Auto-detect terminal width.
 

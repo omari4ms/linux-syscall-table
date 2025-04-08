@@ -122,55 +122,89 @@ char *x86[][8] = {
 	{"getegid", "50", "-", "-", "-", "-", "-", "-"},
 	{"acct", "51", "const char * name", "-", "-", "-", "-", "-"},
 	{NULL}};
-	char *arm32[][8] = {
-		{"SYSCALL NAME", "r7", "r0", "r1", "r2", "r3", "r4", "r5"},
-		{"restart_syscall", "0", "-", "-", "-", "-", "-", "-"},
-		{"exit", "1", "int error_code", "-", "-", "-", "-", "-"},
-		{"fork", "2", "-", "-", "-", "-", "-", "-"},
-		{"read", "3", "unsigned int fd", "char * buf", "size_t count", "-", "-", "-"},
-		{"write", "4", "unsigned int fd", "const char * buf", "size_t count", "-", "-", "-"},
-		{"open", "5", "const char * filename", "int flags", "int mode", "-", "-", "-"},
-		{"close", "6", "unsigned int fd", "-", "-", "-", "-", "-"},
-		{"waitpid", "7", "pid_t pid", "int * wait_stat", "int options", "-", "-", "-"},
-		{"creat", "8", "const char * pathname", "int mode", "-", "-", "-", "-"},
-		{"link", "9", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
-		{"unlink", "10", "const char * pathname", "-", "-", "-", "-", "-"},
-		{"execve", "11", "const char * filename", "char const argv []", "char const envp []", "-", "-", "-"},
-		{"chdir", "12", "const char * filename", "-", "-", "-", "-", "-"},
-		{"time", "13", "time_t * tloc", "-", "-", "-", "-", "-"},
-		{"mknod", "14", "const char * filename", "int mode", "int dev", "-", "-", "-"},
-		{"chmod", "15", "const char * filename", "mode_t mode", "-", "-", "-", "-"},
-		{"lchown", "16", "const char * filename", "uid_t owner", "gid_t group", "-", "-", "-"},
-		{"break", "17", "-", "-", "-", "-", "-", "-"},
-		{"oldstat", "18", "const char * filename", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
-		{"lseek", "19", "unsigned int fd", "off_t offset", "unsigned int whence", "-", "-", "-"},
-		{"getpid", "20", "-", "-", "-", "-", "-", "-"},
-		{"mount", "21", "char * dev_name", "char * dir_name", "char * type", "unsigned long flags", "void * data"},
-		{"umount", "22", "char * name", "int flags", "-", "-", "-", "-"},
-		{"setuid", "23", "uid_t uid", "-", "-", "-", "-", "-"},
-		{"getuid", "24", "-", "-", "-", "-", "-", "-"},
-		{"stime", "25", "time_t * tptr", "-", "-", "-", "-", "-"},
-		{"ptrace", "26", "long request", "long pid", "long addr", "long data", "-", "-"},
-		{"alarm", "27", "unsigned int seconds", "-", "-", "-", "-", "-"},
-		{"oldfstat", "28", "int fd", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
-		{"pause", "29", "-", "-", "-", "-", "-", "-"},
-		{"utime", "30", "char * filename", "struct utimbuf * times", "-", "-", "-", "-"},
-		{"stty", "31", "-", "-", "-", "-", "-", "-"},
-		{"gtty", "32", "-", "-", "-", "-", "-", "-"},
-		{"access", "33", "const char * filename", "int mode", "-", "-", "-", "-"},
-		{"nice", "34", "int priority", "-", "-", "-", "-", "-"},
-		{"ftime", "35", "-", "-", "-", "-", "-", "-"},
-		{"sync", "36", "-", "-", "-", "-", "-", "-"},
-		{"kill", "37", "pid_t pid", "int sig", "-", "-", "-", "-"},
-		{"rename", "38", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
-		{"mkdir", "39", "const char * pathname", "int mode", "-", "-", "-", "-"},
-		{"rmdir", "40", "const char * pathname", "-", "-", "-", "-", "-"},
-		{"dup", "41", "unsigned int fildes", "-", "-", "-", "-", "-"},
-		{"pipe", "42", "int * fildes", "-", "-", "-", "-", "-"},
-		{"times", "43", "struct tms * buf", "-", "-", "-", "-", "-"},
-		{"prof", "44", "-", "-", "-", "-", "-", "-"},
-		{NULL}
-		};
+char *arm32[][8] = {
+	{"SYSCALL NAME", "r7", "r0", "r1", "r2", "r3", "r4", "r5"},
+	{"restart_syscall", "0", "-", "-", "-", "-", "-", "-"},
+	{"exit", "1", "int error_code", "-", "-", "-", "-", "-"},
+	{"fork", "2", "-", "-", "-", "-", "-", "-"},
+	{"read", "3", "unsigned int fd", "char * buf", "size_t count", "-", "-", "-"},
+	{"write", "4", "unsigned int fd", "const char * buf", "size_t count", "-", "-", "-"},
+	{"open", "5", "const char * filename", "int flags", "int mode", "-", "-", "-"},
+	{"close", "6", "unsigned int fd", "-", "-", "-", "-", "-"},
+	{"waitpid", "7", "pid_t pid", "int * wait_stat", "int options", "-", "-", "-"},
+	{"creat", "8", "const char * pathname", "int mode", "-", "-", "-", "-"},
+	{"link", "9", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
+	{"unlink", "10", "const char * pathname", "-", "-", "-", "-", "-"},
+	{"execve", "11", "const char * filename", "char const argv []", "char const envp []", "-", "-", "-"},
+	{"chdir", "12", "const char * filename", "-", "-", "-", "-", "-"},
+	{"time", "13", "time_t * tloc", "-", "-", "-", "-", "-"},
+	{"mknod", "14", "const char * filename", "int mode", "int dev", "-", "-", "-"},
+	{"chmod", "15", "const char * filename", "mode_t mode", "-", "-", "-", "-"},
+	{"lchown", "16", "const char * filename", "uid_t owner", "gid_t group", "-", "-", "-"},
+	{"break", "17", "-", "-", "-", "-", "-", "-"},
+	{"oldstat", "18", "const char * filename", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
+	{"lseek", "19", "unsigned int fd", "off_t offset", "unsigned int whence", "-", "-", "-"},
+	{"getpid", "20", "-", "-", "-", "-", "-", "-"},
+	{"mount", "21", "char * dev_name", "char * dir_name", "char * type", "unsigned long flags", "void * data"},
+	{"umount", "22", "char * name", "int flags", "-", "-", "-", "-"},
+	{"setuid", "23", "uid_t uid", "-", "-", "-", "-", "-"},
+	{"getuid", "24", "-", "-", "-", "-", "-", "-"},
+	{"stime", "25", "time_t * tptr", "-", "-", "-", "-", "-"},
+	{"ptrace", "26", "long request", "long pid", "long addr", "long data", "-", "-"},
+	{"alarm", "27", "unsigned int seconds", "-", "-", "-", "-", "-"},
+	{"oldfstat", "28", "int fd", "struct old_kernel_stat * statbuf", "-", "-", "-", "-"},
+	{"pause", "29", "-", "-", "-", "-", "-", "-"},
+	{"utime", "30", "char * filename", "struct utimbuf * times", "-", "-", "-", "-"},
+	{"stty", "31", "-", "-", "-", "-", "-", "-"},
+	{"gtty", "32", "-", "-", "-", "-", "-", "-"},
+	{"access", "33", "const char * filename", "int mode", "-", "-", "-", "-"},
+	{"nice", "34", "int priority", "-", "-", "-", "-", "-"},
+	{"ftime", "35", "-", "-", "-", "-", "-", "-"},
+	{"sync", "36", "-", "-", "-", "-", "-", "-"},
+	{"kill", "37", "pid_t pid", "int sig", "-", "-", "-", "-"},
+	{"rename", "38", "const char * oldname", "const char * newname", "-", "-", "-", "-"},
+	{"mkdir", "39", "const char * pathname", "int mode", "-", "-", "-", "-"},
+	{"rmdir", "40", "const char * pathname", "-", "-", "-", "-", "-"},
+	{"dup", "41", "unsigned int fildes", "-", "-", "-", "-", "-"},
+	{"pipe", "42", "int * fildes", "-", "-", "-", "-", "-"},
+	{"times", "43", "struct tms * buf", "-", "-", "-", "-", "-"},
+	{"prof", "44", "-", "-", "-", "-", "-", "-"},
+	{NULL}};
+char *arm64[][8] = {
+	{"SYSCALL NAME", "x8", "x0", "x1", "x2", "x3", "x4", "x5"},
+    {"io_setup", "0", "unsigned nr_events", "aio_context_t * ctxp", "-", "-", "-", "-"},
+    {"io_destroy", "1", "aio_context_t ctx", "-", "-", "-", "-", "-"},
+    {"io_submit", "2", "aio_context_t ctx_id", "long nr", "struct iocb * * iocbpp", "-", "-", "-"},
+    {"io_cancel", "3", "aio_context_t ctx_id", "struct iocb * iocb", "struct io_event * result", "-", "-", "-"},
+    {"io_getevents", "4", "aio_context_t ctx_id", "long min_nr", "long nr", "struct io_event * events", "struct timespec * timeout", "-"},
+    {"setxattr", "5", "const char * path", "const char * name", "const void * value", "size_t size", "int flags", "-"},
+    {"lsetxattr", "6", "const char * path", "const char * name", "const void * value", "size_t size", "int flags", "-"},
+    {"fsetxattr", "7", "int fd", "const char * name", "const void * value", "size_t size", "int flags", "-"},
+    {"getxattr", "8", "const char * path", "const char * name", "void * value", "size_t size", "-", "-"},
+    {"lgetxattr", "9", "const char * path", "const char * name", "void * value", "size_t size", "-", "-"},
+    {"fgetxattr", "10", "int fd", "const char * name", "void * value", "size_t size", "-", "-"},
+    {"listxattr", "11", "const char * path", "char * list", "size_t size", "-", "-", "-"},
+    {"llistxattr", "12", "const char * path", "char * list", "size_t size", "-", "-", "-"},
+    {"flistxattr", "13", "int fd", "char * list", "size_t size", "-", "-", "-"},
+    {"removexattr", "14", "const char * path", "const char * name", "-", "-", "-", "-"},
+    {"lremovexattr", "15", "const char * path", "const char * name", "-", "-", "-", "-"},
+    {"fremovexattr", "16", "int fd", "const char * name", "-", "-", "-", "-"},
+    {"getcwd", "17", "char * buf", "size_t size", "-", "-", "-", "-"},
+    {"lookup_dcookie", "18", "u64 cookie64", "char * buf", "size_t len", "-", "-", "-"},
+    {"eventfd2", "19", "unsigned int count", "int flags", "-", "-", "-", "-"},
+    {"epoll_create1", "20", "int flags", "-", "-", "-", "-", "-"},
+    {"epoll_ctl", "21", "int epfd", "int op", "int fd", "struct epoll_event * event", "-", "-"},
+    {"epoll_pwait", "22", "int epfd", "struct epoll_event * events", "int maxevents", "int timeout", "const sigset_t * sigmask", "-"},
+    {"dup", "23", "unsigned int oldfd", "-", "-", "-", "-", "-"},
+    {"dup3", "24", "unsigned int oldfd", "unsigned int newfd", "int flags", "-", "-", "-"},
+    {"fcntl", "25", "unsigned int fd", "unsigned int cmd", "unsigned long arg", "-", "-", "-"},
+    {"inotify_init1", "26", "int flags", "-", "-", "-", "-", "-"},
+    {"inotify_add_watch", "27", "int fd", "const char * pathname", "u32 mask", "-", "-", "-"},
+    {"inotify_rm_watch", "28", "int fd", "s32 wd", "-", "-", "-", "-"},
+    {"ioctl", "29", "unsigned int fd", "unsigned int cmd", "unsigned long arg", "-", "-", "-"},
+    {"ioprio_set", "30", "int which", "int who", "int ioprio", "-", "-", "-"},
+    {"ioprio_get", "31", "int which", "int who", "-", "-", "-", "-"},
+	{NULL}};
 
 void help(const char *argv)
 {
@@ -326,13 +360,17 @@ int main(int argc, char *argv[])
 		{
 			print_table(x64);
 		}
-		if (strcmp(argv[1], "--x86") == 0 || strcmp(argv[1], "--x32") == 0 )
+		if (strcmp(argv[1], "--x86") == 0 || strcmp(argv[1], "--x32") == 0)
 		{
 			print_table(x86);
 		}
-        if (strcmp(argv[1], "--arm32") == 0 || strcmp(argv[1], "--arm") == 0)
+		if (strcmp(argv[1], "--arm32") == 0 || strcmp(argv[1], "--arm") == 0)
 		{
 			print_table(arm32);
+		}
+		if (strcmp(argv[1], "--arm64") == 0)
+		{
+			print_table(arm64);
 		}
 		break;
 	case 3:
@@ -348,7 +386,11 @@ int main(int argc, char *argv[])
 		{
 			search_and_print(arm32, argv[2]);
 		}
-		break;
+
+		if (strcmp(argv[1], "--arm64") == 0)
+		{
+			search_and_print(arm64, argv[2]);
+		}
 		break;
 	default:
 		help(argv[0]);

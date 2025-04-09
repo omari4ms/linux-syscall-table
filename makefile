@@ -1,15 +1,15 @@
 CC = gcc
-appname = syscall.c
-appout =  syscall
+file = syscall.c
+bin_file =  syscall
 
 all: build run 
 build:
-	@$(CC) $(appname) -o $(appout)
+	@$(CC) $(file) -o $(bin_file)
 run:
-	@./$(appout) --help
+	@./$(bin_file) --help
 install:
-	@mv $(appout) /bin/
+	@mv $(bin_file) /bin/
 clean:
-	@if [ -e $(appout) ]; then rm $(appout); else echo "Error: '$(appout)' binary file not found."; fi
+	@if [ -e $(bin_file) ]; then rm $(bin_file); else echo "Error: '$(bin_file)'  file not found."; fi
 	clear
 
